@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TO DO LIST
+
+- [x] Base code: [React-admin](https://marmelab.com/react-admin) + [Material UI](https://material-ui.com/) + RestAPI
+- [x] API services
+    - [x] Authentication
+        - [x] Using LocalStorage to enable Login & Logout mechanism (dummy login)
+        - [ ] Using real Login mechanism (No need to be implemented in this final project)
+    - [x] `Read` all users
+    - [ ] (what's more?)
+- [ ] Complete documentation
+
 ## Available Scripts
 
 In the project directory, you can run:
