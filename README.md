@@ -3,12 +3,40 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## TO DO LIST
 
 - [x] Base code: [React-admin](https://marmelab.com/react-admin) + [Material UI](https://material-ui.com/) + RestAPI
-- [x] API services
-    - [x] Authentication
+- [ ] Pages
+    - [ ] Page `Login`
         - [x] Using LocalStorage to enable Login & Logout mechanism (dummy login)
         - [ ] Using real Login mechanism (No need to be implemented in this final project)
-    - [x] `Read` all users
-    - [ ] (what's more?)
+    - [ ] Page `Dashboard`
+    - [ ] Page `Live Monitoring`
+        - [ ] Added dummy iframe
+        - [ ] Added Kibana iframe
+    - [ ] Page `Management`
+        - [ ] sub-menu of `Management`:
+            - [ ] Users: `C, R, D`
+                - [ ] `C` Create a new user
+                - [x] `R` Read all users
+                - [ ] `D` Delete an existing user
+            - [ ] Drones: `C, R, D`
+                - [ ] `C` Create a new Drone
+                - [ ] `R` Read all Drones
+                - [ ] `D` Delete an existing Drone
+            - [ ] Worker nodes: `C, R, D`
+                - [ ] `C` Create a new Worker node
+                - [ ] `R` Read all Worker nodes
+                - [ ] `D` Delete an existing Worker node
+    - [ ] Page `Transaction History`
+        - [ ] sub-menu of `Transaction History`
+            - [ ] Image frames: `R`
+            - [ ] CPU Utilization
+                - [ ] Cores Utilization: `R`
+                - [ ] RAM Utilization: `R`
+            - [ ] GPU Utilization
+                - [ ] RAM Utilization: `R`
+- [ ] GUI Style
+    - [ ] Added / changed into Dark mode
+    - [ ] Added sub-menu
+    - [ ] Setup list of sidebar menu
 - [ ] Complete documentation
 
 ## Available Scripts
