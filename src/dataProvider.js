@@ -17,10 +17,10 @@ export default {
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
-        return httpClient(url).then(({ headers, json }) => ({
+        // return httpClient(url).then(({ headers, json }) => ({
+        return httpClient(url).then(({ json }) => ({
             data: json.results,
             total: json.total,
-            // total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
     },
 
@@ -77,7 +77,7 @@ export default {
             method: 'POST',
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({
-            data: { ...params.data, id: json.id },
+            data: { ...params.data, id: json.results.id },
         })),
 
     delete: (resource, params) =>
