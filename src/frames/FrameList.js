@@ -1,38 +1,36 @@
 import {useMediaQuery} from "@material-ui/core";
 import {Datagrid, List, SimpleList, TextField, ReferenceField} from "react-admin";
 import * as React from "react";
+import FrameFilter from './FrameFilter';
 
 const FrameList = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
-        // <List filters={<UserFilter />} {...props}>
-        <List {...props}>
+        <List filters={<FrameFilter />} {...props}>
             {isSmall ? (
                 <SimpleList
-                    // primaryText=
-                    //     {record =>
-                    //         <ReferenceField
-                    //             label="drone_id"
-                    //             source="droneId"
-                    //             reference="drones"
-                    //             basePath="droneId"
-                    //             record={record}>
-                    //             <TextField source="droneId" />
-                    //         </ReferenceField>
-                    //     }
-                    primaryText={record => record.frame_id}
+                    primaryText=
+                        {record =>
+                            <ReferenceField
+                                label="drone_name"
+                                source="drone_id"
+                                reference="drones"
+                                basePath="drone_id"
+                                record={record}>
+                                 <TextField source="drone_name" />
+                             </ReferenceField>
+                         }
                     secondaryText=
                         {record =>
                             <ReferenceField
                                 label="node_name"
                                 source="node_id"
                                 reference="nodes"
-                                basePath="node_name"
+                                basePath="node_id"
                                 record={record}>
                                 <TextField source="node_name" />
                             </ReferenceField>
                         }
-                    // secondaryText={record => record.frame_name}
                     tertiaryText={record => `FrameID '${record.frame_id}'`}
                 />
             ) : (
