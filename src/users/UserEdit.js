@@ -1,9 +1,12 @@
-import {Edit, SimpleForm, TextInput} from "react-admin";
+import {Edit, SimpleForm, TextInput, useTranslate} from "react-admin";
 import * as React from "react";
 // import UserCreate from "./UserCreate";
 
 const UserTitle = ({ record }) => {
-    return <span>User {record ? `"${record.name}"` : ''}</span>;
+    const translate = useTranslate();
+    return <span>
+        {record ? translate('user.edit.title', { title: record.name }) : ''
+    }</span>;
 };
 
 // export const UserEdit = props => (
