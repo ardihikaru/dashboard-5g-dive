@@ -5,6 +5,7 @@ import { Admin, Resource } from 'react-admin';
 import users from './users';
 import drones from './drones';
 import nodes from './nodes';
+import frames from './frames';
 import Dashboard from './dashboard/Dashboard';
 import authProvider from './authProvider';
 import dataProvider from './dataProvider';
@@ -26,6 +27,7 @@ const App = () => (
         <Resource name="users" {...users} />
         <Resource name="drones" {...drones} />
         <Resource name="nodes" {...nodes} />
+        <Resource name="frames" {...frames} />
     </Admin>
 );
 export default App;

@@ -36,7 +36,7 @@ export default {
 
     getOne: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-            data: json,
+            data: json.results,
         })),
 
     getMany: (resource, params) => {
@@ -44,7 +44,8 @@ export default {
             filter: JSON.stringify({ id: params.ids }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        return httpClient(url).then(({ json }) => ({ data: json }));
+        console.log(" @@@@ getMany .. url = " + url);
+        return httpClient(url).then(({ json }) => ({ data: json.results }));
     },
 
     getManyReference: (resource, params) => {
@@ -62,7 +63,7 @@ export default {
 
         // return httpClient(url).then(({ headers, json }) => ({
         return httpClient(url).then(({ json }) => ({
-            data: json,
+            data: json.results,
             total: json.total,
             // total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
@@ -72,7 +73,7 @@ export default {
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: json.results })),
 
     updateMany: (resource, params) => {
         const query = {
@@ -81,7 +82,7 @@ export default {
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json }));
+        }).then(({ json }) => ({ data: json.results }));
     },
 
     create: (resource, params) =>
@@ -95,7 +96,7 @@ export default {
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'DELETE',
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: json.results })),
 
     deleteMany: (resource, params) => {
         const query = {
@@ -104,6 +105,6 @@ export default {
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'DELETE',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json }));
+        }).then(({ json }) => ({ data: json.results }));
     }
 };
