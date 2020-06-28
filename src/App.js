@@ -5,12 +5,13 @@ import * as React from "react";
 import { Admin, Resource } from 'react-admin';
 // import { Admin, Resource, EditGuesser } from 'react-admin';
 // import { Admin, Resource, ListGuesser } from 'react-admin';
-import { UserList, UserEdit, UserCreate } from './users';
+// import { UserList, UserEdit, UserCreate } from './user/users';
+import users from './users';
 // import { PostList } from './posts';
 import { PostList, PostEdit, PostCreate } from './posts';
 // import jsonServerProvider from 'ra-data-json-server';
 import PostIcon from '@material-ui/icons/Book';
-import UserIcon from '@material-ui/icons/Group';
+// import UserIcon from '@material-ui/icons/Group';
 import Dashboard from './Dashboard';
 import authProvider from './authProvider';
 import dataProvider from './dataProvider';
@@ -26,7 +27,8 @@ const App = () => (
         {/*<Resource name="posts" list={PostList} edit={EditGuesser} />*/}
         <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
         {/*<Resource name="users" list={ListGuesser} />*/}
-        <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />
+        {/*<Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />*/}
+        <Resource name="users" {...users} />
         {/*<Resource name="users" list={UserList} icon={UserIcon} />*/}
     </Admin>
 );
