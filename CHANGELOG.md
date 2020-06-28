@@ -1,3 +1,8 @@
+## 1.1.1 (June 29, 2020)
+  - added filter
+  - Merge branch 'release-1.1'
+  - Merge branch 'release-1.0'
+
 ## 1.1.0 (June 29, 2020)
   - Merge branch 'feature/menus' into develop
   - bug fixed
