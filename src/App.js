@@ -4,7 +4,7 @@ import { Admin, Resource } from 'react-admin';
 import users from './users';
 import drones from './drones';
 import nodes from './nodes';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard/Dashboard';
 import authProvider from './authProvider';
 import dataProvider from './dataProvider';
 import i18nProvider from './i18nProvider';
