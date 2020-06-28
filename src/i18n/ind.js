@@ -26,6 +26,13 @@ export default {
                 drone_name: 'Nama Drone',
             },
         },
+        nodes: {
+            name: 'Data Node |||| Data Node',
+            fields: {
+                node_id: 'Nomor Node',
+                node_name: 'Nama Node',
+            },
+        },
     },
     user: {
         list: {
@@ -41,6 +48,14 @@ export default {
         },
         edit: {
             title: 'Nama Drone "%{title}"',
+        },
+    },
+    node: {
+        list: {
+            search: 'Cari',
+        },
+        edit: {
+            title: 'Nama Node "%{title}"',
         },
     },
 };

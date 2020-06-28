@@ -3,6 +3,7 @@ import * as React from "react";
 import { Admin, Resource } from 'react-admin';
 import users from './users';
 import drones from './drones';
+import nodes from './nodes';
 import Dashboard from './Dashboard';
 import authProvider from './authProvider';
 import dataProvider from './dataProvider';
@@ -19,6 +20,7 @@ const App = () => (
     >
         <Resource name="users" {...users} />
         <Resource name="drones" {...drones} />
+        <Resource name="nodes" {...nodes} />
     </Admin>
 );
 export default App;

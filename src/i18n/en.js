@@ -25,6 +25,13 @@ export const messages = {
                 drone_name: 'Drone Name',
             },
         },
+        nodes: {
+            name: 'Node |||| Nodes',
+            fields: {
+                node_id: 'Node ID',
+                node_name: 'Node Name',
+            },
+        },
     },
     user: {
         list: {
@@ -40,6 +47,14 @@ export const messages = {
         },
         edit: {
             title: 'Drone "%{title}"',
+        },
+    },
+    node: {
+        list: {
+            search: 'Search',
+        },
+        edit: {
+            title: 'Node "%{title}"',
         },
     },
 };
