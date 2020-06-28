@@ -6,7 +6,8 @@ export const messages = {
             close: 'Close',
             resetViews: 'Reset views',
         },
-        'switch-language-str': 'Switch Language: Indonesia',
+        'switch-language-str': 'English to Indonesia',
+        'logout-button': 'Logout',
     },
     ...englishMessages,
     resources: {

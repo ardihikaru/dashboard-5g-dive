@@ -3,8 +3,18 @@ import { stringify } from 'query-string';
 
 // const apiUrl = 'https://my.api.com/';
 // const apiUrl = 'http://192.168.0.150:5000';
-const apiUrl = 'http://localhost:5000/api';
-const httpClient = fetchUtils.fetchJson;
+// const apiUrl = 'http://localhost:5000/api';
+const apiUrl = 'http://127.0.0.1:5000/api';
+// const httpClient = fetchUtils.fetchJson;
+
+const httpClient = (url, options = {}) => {
+    if (!options.headers) {
+        options.headers = new Headers({ Accept: 'application/json' });
+    }
+    const token = localStorage.getItem('token');
+    options.headers.set('Authorization', `Bearer ${token}`);
+    return fetchUtils.fetchJson(url, options);
+};
 
 export default {
     getList: (resource, params) => {
@@ -50,9 +60,11 @@ export default {
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
-        return httpClient(url).then(({ headers, json }) => ({
+        // return httpClient(url).then(({ headers, json }) => ({
+        return httpClient(url).then(({ json }) => ({
             data: json,
-            total: parseInt(headers.get('content-range').split('/').pop(), 10),
+            total: json.total,
+            // total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
     },
 

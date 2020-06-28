@@ -7,7 +7,8 @@ export default {
             close: 'Tutup',
             resetViews: 'Réinitialiser des vues',
         },
-        'switch-language-str': 'Ganti bahasa: English',
+        'switch-language-str': 'Indonesia to English',
+        'logout-button': 'Keluar',
     },
     ...indonesianMessages,
     resources: {
