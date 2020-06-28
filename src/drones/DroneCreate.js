@@ -4,7 +4,7 @@ import * as React from "react";
 const DroneCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput disabled source="id" />
+            <TextInput keyboardType='numeric' disabled source="id" />
             <TextInput source="drone_id" />
             <TextInput source="drone_name" />
         </SimpleForm>

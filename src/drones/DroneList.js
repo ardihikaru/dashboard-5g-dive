@@ -8,9 +8,8 @@ const DroneList = (props) => {
         <List {...props}>
             {isSmall ? (
                 <SimpleList
-                    primaryText={record => record.drone_name}
-                    secondaryText={record => `Drone No. ${record.drone_id}`}
-                    tertiaryText={record => new Date(record.create_time).toLocaleDateString()}
+                    primaryText={record => `Drone No. ${record.drone_id}`}
+                    tertiaryText={record => record.drone_name}
                 />
             ) : (
                 <Datagrid>

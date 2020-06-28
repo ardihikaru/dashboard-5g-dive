@@ -8,9 +8,8 @@ const NodeList = (props) => {
         <List {...props}>
             {isSmall ? (
                 <SimpleList
-                    primaryText={record => record.node_name}
-                    secondaryText={record => `Node No. ${record.node_id}`}
-                    tertiaryText={record => new Date(record.create_time).toLocaleDateString()}
+                    primaryText={record => `Node No. ${record.node_id}`}
+                    tertiaryText={record => record.node_name}
                 />
             ) : (
                 <Datagrid>

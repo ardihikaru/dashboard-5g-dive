@@ -10,9 +10,9 @@ const UserList = (props) => {
         <List {...props}>
             {isSmall ? (
                 <SimpleList
-                    primaryText={record => record.user}
-                    secondaryText={record => `${record.email} views`}
-                    tertiaryText={record => new Date(record.create_time).toLocaleDateString()}
+                    primaryText={record => record.name}
+                    secondaryText={record => record.username}
+                    tertiaryText={record => record.email}
                 />
             ) : (
                 <Datagrid>
