@@ -6,15 +6,31 @@ export const messages = {
             close: 'Close',
             resetViews: 'Reset views',
         },
-        'switch-language-str': 'Switch Language: Indonesia',
+        'switch-language-str': 'English to Indonesia',
+        'logout-button': 'Logout',
     },
     ...englishMessages,
     resources: {
         users: {
             name: 'User |||| Users',
             fields: {
-                name: 'Name',
-                role: 'Role',
+                name: 'Nama Lengkap',
+                username: 'Nama Pengguna',
+                email: 'Email',
+            },
+        },
+        drones: {
+            name: 'Drone |||| Drones',
+            fields: {
+                drone_id: 'Drone ID',
+                drone_name: 'Drone Name',
+            },
+        },
+        nodes: {
+            name: 'Node |||| Nodes',
+            fields: {
+                node_id: 'Node ID',
+                node_name: 'Node Name',
             },
         },
     },
@@ -22,16 +38,24 @@ export const messages = {
         list: {
             search: 'Search',
         },
-        form: {
-            summary: 'Summary',
-            security: 'Security',
-        },
         edit: {
             title: 'User "%{title}"',
         },
-        action: {
-            save_and_add: 'Save and Add',
-            save_and_show: 'Save and Show',
+    },
+    drone: {
+        list: {
+            search: 'Search',
+        },
+        edit: {
+            title: 'Drone "%{title}"',
+        },
+    },
+    node: {
+        list: {
+            search: 'Search',
+        },
+        edit: {
+            title: 'Node "%{title}"',
         },
     },
 };

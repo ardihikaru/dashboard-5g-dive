@@ -7,7 +7,8 @@ export default {
             close: 'Tutup',
             resetViews: 'Réinitialiser des vues',
         },
-        'switch-language-str': 'Ganti bahasa: English',
+        'switch-language-str': 'Indonesia to English',
+        'logout-button': 'Keluar',
     },
     ...indonesianMessages,
     resources: {
@@ -19,17 +20,43 @@ export default {
                 email: 'Email',
             },
         },
+        drones: {
+            name: 'Data Drone |||| Data Drone',
+            fields: {
+                drone_id: 'Nomor Drone',
+                drone_name: 'Nama Drone',
+            },
+        },
+        nodes: {
+            name: 'Data Node |||| Data Node',
+            fields: {
+                node_id: 'Nomor Node',
+                node_name: 'Nama Node',
+            },
+        },
     },
     user: {
         list: {
             search: 'Cari',
         },
-        form: {
-            summary: 'Ringkasan',
-            security: 'Sekuritas',
-        },
         edit: {
             title: 'Nama Pengguna "%{title}"',
+        },
+    },
+    drone: {
+        list: {
+            search: 'Cari',
+        },
+        edit: {
+            title: 'Nama Drone "%{title}"',
+        },
+    },
+    node: {
+        list: {
+            search: 'Cari',
+        },
+        edit: {
+            title: 'Nama Node "%{title}"',
         },
     },
 };
