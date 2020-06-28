@@ -13,8 +13,16 @@ export const messages = {
         users: {
             name: 'User |||| Users',
             fields: {
-                name: 'Name',
-                role: 'Role',
+                name: 'Nama Lengkap',
+                username: 'Nama Pengguna',
+                email: 'Email',
+            },
+        },
+        drones: {
+            name: 'Drone |||| Drones',
+            fields: {
+                drone_id: 'Drone ID',
+                drone_name: 'Drone Name',
             },
         },
     },
@@ -22,16 +30,16 @@ export const messages = {
         list: {
             search: 'Search',
         },
-        form: {
-            summary: 'Summary',
-            security: 'Security',
-        },
         edit: {
             title: 'User "%{title}"',
         },
-        action: {
-            save_and_add: 'Save and Add',
-            save_and_show: 'Save and Show',
+    },
+    drone: {
+        list: {
+            search: 'Search',
+        },
+        edit: {
+            title: 'Drone "%{title}"',
         },
     },
 };

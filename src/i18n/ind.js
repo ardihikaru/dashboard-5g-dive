@@ -19,17 +19,28 @@ export default {
                 email: 'Email',
             },
         },
+        drones: {
+            name: 'Data Drone |||| Data Drone',
+            fields: {
+                drone_id: 'Nomor Drone',
+                drone_name: 'Nama Drone',
+            },
+        },
     },
     user: {
         list: {
             search: 'Cari',
         },
-        form: {
-            summary: 'Ringkasan',
-            security: 'Sekuritas',
-        },
         edit: {
             title: 'Nama Pengguna "%{title}"',
+        },
+    },
+    drone: {
+        list: {
+            search: 'Cari',
+        },
+        edit: {
+            title: 'Nama Drone "%{title}"',
         },
     },
 };
