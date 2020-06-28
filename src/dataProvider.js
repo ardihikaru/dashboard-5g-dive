@@ -4,7 +4,17 @@ import { stringify } from 'query-string';
 // const apiUrl = 'https://my.api.com/';
 // const apiUrl = 'http://192.168.0.150:5000';
 const apiUrl = 'http://localhost:5000/api';
-const httpClient = fetchUtils.fetchJson;
+// const apiUrl = 'http://127.0.0.1:5000/api';
+// const httpClient = fetchUtils.fetchJson;
+
+const httpClient = (url, options = {}) => {
+    if (!options.headers) {
+        options.headers = new Headers({ Accept: 'application/json' });
+    }
+    const token = localStorage.getItem('token');
+    options.headers.set('Authorization', `Bearer ${token}`);
+    return fetchUtils.fetchJson(url, options);
+};
 
 export default {
     getList: (resource, params) => {
@@ -26,7 +36,7 @@ export default {
 
     getOne: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-            data: json,
+            data: json.results,
         })),
 
     getMany: (resource, params) => {
@@ -34,7 +44,8 @@ export default {
             filter: JSON.stringify({ id: params.ids }),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        return httpClient(url).then(({ json }) => ({ data: json }));
+        console.log(" @@@@ getMany .. url = " + url);
+        return httpClient(url).then(({ json }) => ({ data: json.results }));
     },
 
     getManyReference: (resource, params) => {
@@ -50,9 +61,11 @@ export default {
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
-        return httpClient(url).then(({ headers, json }) => ({
-            data: json,
-            total: parseInt(headers.get('content-range').split('/').pop(), 10),
+        // return httpClient(url).then(({ headers, json }) => ({
+        return httpClient(url).then(({ json }) => ({
+            data: json.results,
+            total: json.total,
+            // total: parseInt(headers.get('content-range').split('/').pop(), 10),
         }));
     },
 
@@ -60,7 +73,7 @@ export default {
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: json.results })),
 
     updateMany: (resource, params) => {
         const query = {
@@ -69,7 +82,7 @@ export default {
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json }));
+        }).then(({ json }) => ({ data: json.results }));
     },
 
     create: (resource, params) =>
@@ -83,7 +96,7 @@ export default {
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'DELETE',
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: json.results })),
 
     deleteMany: (resource, params) => {
         const query = {
@@ -92,6 +105,6 @@ export default {
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'DELETE',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json }));
+        }).then(({ json }) => ({ data: json.results }));
     }
 };
